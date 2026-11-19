@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rádia, CW klíčovač a dekodér · kQSO</title>
+<meta name="description" content="kQSO a Icom přes CI-V (IC-705 přes Bluetooth, ostatní kabelem), CW klíčovač M5-ESP32 s makry a ESM, CW dekodér a hardwarová klávesnice.">
+<link rel="canonical" href="https://kqso.eu/cs/radia.html">
+<link rel="alternate" hreflang="cs" href="https://kqso.eu/cs/radia.html">
+<link rel="alternate" hreflang="en" href="https://kqso.eu/en/radios.html">
+<link rel="alternate" hreflang="x-default" href="https://kqso.eu/en/radios.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="kQSO">
+<meta property="og:title" content="Rádia, CW klíčovač a dekodér · kQSO">
+<meta property="og:description" content="kQSO a Icom přes CI-V (IC-705 přes Bluetooth, ostatní kabelem), CW klíčovač M5-ESP32 s makry a ESM, CW dekodér a hardwarová klávesnice.">
+<meta property="og:url" content="https://kqso.eu/cs/radia.html">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:image" content="https://kqso.eu/media/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131313" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/site.css">
+<script src="/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Přeskočit na obsah</a>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="/cs/"><img src="/favicon.svg" alt="" width="28" height="28"><span>kQSO</span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" class="nav">
+<a href="/cs/aktivace.html">Aktivace</a>
+<a href="/cs/zavody.html">VKV závody</a>
+<a href="/cs/satelity.html">Satelity</a>
+<a href="/cs/radia.html" aria-current="page">Rádia a CW</a>
+<a href="/cs/novinky.html">Novinky</a>
+<a href="/cs/faq.html">Otázky</a>
+      <div class="nav-langs"><span class="langs" role="group" aria-label="Jazyk"><span aria-current="true" lang="cs">CS</span><a href="/en/radios.html" hreflang="en" lang="en" title="English">EN</a></span></div>
+    </nav>
+    <a class="btn btn-ink top-open" href="https://kqso.ok1cdj.com/">Otevřít kQSO</a>
+    <span class="langs" role="group" aria-label="Jazyk"><span aria-current="true" lang="cs">CS</span><a href="/en/radios.html" hreflang="en" lang="en" title="English">EN</a></span>
+  </div>
+</header>
+<main id="main">
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">Rádia · CW · klávesnice</p>
+    <h1>Ovládání rádia a CW</h1>
+    <p class="lead">Pásmo, mód a kmitočet z rádia, CW makra na F klávesách a dekodér, který z poslechu dá značku do řádku. S vlastnoručně postaveným klíčovačem M5 i na iPadu. Obě části jsou zatím beta.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split">
+    <div class="text">
+      <p class="eyebrow">Klíčovač M5 · stavba</p>
+      <h2>Klíčovač si postavíš sám, z pár součástek</h2>
+      <p>Klíčovač kQSO je malá kostička <b>M5Stack Atom</b> s Bluetooth. Nepotřebuje plošný spoj ani krabičku: pár součástek se zapájí přímo do kabelu pod smršťovací bužírku. Firmware nahraješ z prohlížeče, bez vývojového prostředí a ovladačů.</p>
+      <p>Jeden klíčovač pak umí dvě věci najednou:</p>
+      <ul class="ticks">
+        <li><b>klíčuje CW</b> z maker kQSO (konektor KEY),</li>
+        <li><b>připojí rádio přes CI-V</b> (konektor REMOTE): pásmo, mód a kmitočet z rádia, přeladění z logu. Jde to s jakýmkoli Icomem s CI-V.</li>
+      </ul>
+      <p><b>Funguje i na iPadu a iPhonu.</b> Aplikace kQSO pro iOS se ke klíčovači připojí přes Bluetooth, takže máš CW i ovládání rádia na tabletu od Applu, kam rádio kabelem připojit nejde. Stejně tak na Androidu a v Chrome nebo Edge na počítači.</p>
+      <p class="btns"><a class="btn btn-ink" href="https://keyer.ok1cdj.com/build.html?lang=cs&amp;app=kqso">Návod na stavbu klíčovače</a></p>
+    </div>
+    <div class="callout" style="margin-top:0">
+      <h3 style="margin-top:0">Co budeš potřebovat</h3>
+      <ul class="ticks">
+        <li>M5Stack <b>AtomS3 Lite</b> (doporučený), Atom Lite, nebo AtomS3 s displejem, který ukazuje kmitočet</li>
+        <li>kabel Grove a dva kabely s jackem 3,5 mm (KEY a CI-V)</li>
+        <li>klíčování: optočlen PC817, nebo N-MOSFET, a dva rezistory</li>
+        <li>CI-V: MOSFET BSS138 nebo 2N7000 a dva rezistory</li>
+        <li>smršťovací bužírka; volitelně baterie Atomic Battery Base</li>
+        <li>na nahrání firmwaru: počítač s Chrome nebo Edge a datový kabel USB-C</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band band-grey">
+  <div class="wrap split">
+    <div class="text">
+      <h2>Icom přes CI-V</h2>
+      <ul class="ticks">
+        <li><b>IC-705 přes Bluetooth</b> v aplikaci pro Android a iOS.</li>
+        <li><b>Jakýkoli Icom kabelem</b>: USB nebo CT-17 v Chrome či Edge na počítači (Windows, Linux, macOS). Rychlost i adresu najde kQSO samo.</li>
+        <li><b>Přes klíčovač M5</b> na konektoru CI-V rádia, i na iPadu a iPhonu.</li>
+      </ul>
+      <p>Pásmo, mód a přesný kmitočet pak jdou z rádia. Napsané pásmo nebo mód rádio přeladí:</p>
+      <div class="example">
+        <div class="typed">F14030 cw</div>
+        <p>Rádio na 14,030 MHz v CW.</p>
+      </div>
+      <p>IC-705, 9700, 7300 a 7610 vysílají CW makra vlastním klíčovačem, v SSB a FM nabídne kQSO hlasové paměti T1–T4. Pro mikrovlny má tabulku transvertorů: rádio se naladí na mezifrekvenci a do logu jde kmitočet na pásmu. Známé modely: IC-705, 706, 910, 9700, 7300, 7610, 7100.</p>
+    </div>
+    <figure class="shot"><img src="/media/tablet-vhf-logging.webp" alt="Tablet ve VKV závodě v CW s makry klíčovače" width="1340" height="690" loading="lazy"><figcaption>VKV závod v CW: makra klíčovače, poslední spojení, lokátor z databáze.</figcaption></figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split flip">
+    <div class="text">
+      <h2>CW klíčovač a makra</h2>
+      <p>S klíčovačem M5 přes Bluetooth (nebo s klíčovačem rádia) má každý profil logu svoje makra: CQ, výměna, TU, opakování, značka, lokátor nebo reference.</p>
+      <ul class="ticks">
+        <li>RUN a S&amp;P, ESM jako v N1MM: Enter pošle, co je v tu chvíli na řadě.</li>
+        <li>Opakování výzvy: <code>A3</code> a CQ volá dokola s 3s mezerou.</li>
+        <li>Zkrácená čísla: 5NN, T18. V logu i v EDI zůstanou číslice.</li>
+        <li>Makra na <kbd>F5</kbd>–<kbd>F12</kbd> na každé obrazovce logu.</li>
+      </ul>
+      <h2>CW dekodér</h2>
+      <p>Dekodér <a href="https://github.com/e04/web-deep-cw-decoder">DeepCW</a> poslouchá zvuk rádia (USB zvukovka, mikrofon telefonu, záložka WebSDR) a ťuknutím dá značku, report nebo lokátor do řádku. Zvuk se zpracuje jen v zařízení. V aplikaci pro Android a iOS, na webu v Chrome a Edge na počítači.</p>
+    </div>
+    <figure class="shot"><img src="/img/cs/cw-tap.webp" alt="Řádek dekodéru CW nad logem, ťuknutím se značka dá do řádku" width="780" height="412" loading="lazy"><figcaption>Dekodér nad řádkem: ťuknutí na značku ji zapíše.</figcaption></figure>
+  </div>
+</section>
+
+<section class="band band-grey">
+  <div class="wrap">
+    <div class="text">
+      <h2>Hardwarová klávesnice</h2>
+      <p>Na počítači nebo tabletu s klávesnicí jde všechno bez myši: <kbd>Ctrl</kbd>+<kbd>Enter</kbd> uloží, <kbd>Alt</kbd>+<kbd>N</kbd> / <kbd>P</kbd> přepne pásmo, <kbd>Alt</kbd>+<kbd>M</kbd> mód, <kbd>PgUp</kbd> / <kbd>PgDn</kbd> rychlost klíčování, <kbd>F5</kbd>–<kbd>F12</kbd> makra, <kbd>Esc</kbd> zastaví vysílání.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="foot">
+  <div class="foot-in">
+    <p><img src="/favicon.svg" alt="" width="20" height="20"> kQSO napsal OK1CDJ · svobodný software pod licencí GPL-3.0</p>
+    <p class="foot-links">
+      <a href="https://kqso.ok1cdj.com/">kqso.ok1cdj.com</a>
+      <a href="https://kqso.ok1cdj.com/manual/cs.html">Návod</a>
+      <a href="/cs/novinky.html">Aktuální verze <span class="mono">1.19</span></a>
+      <a href="https://github.com/ok1cdj/kQSO">GitHub</a>
+      <a href="https://kqso.ok1cdj.com/privacy.html">Ochrana soukromí</a>
+    </p>
+  </div>
+</footer>
+</body>
+</html>

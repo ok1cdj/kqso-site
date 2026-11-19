@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Novinky · kQSO</title>
+<meta name="description" content="Co je nového v jednotlivých verzích kQSO. Web, Android i iOS mají stejnou verzi.">
+<link rel="canonical" href="https://kqso.eu/cs/novinky.html">
+<link rel="alternate" hreflang="cs" href="https://kqso.eu/cs/novinky.html">
+<link rel="alternate" hreflang="en" href="https://kqso.eu/en/news.html">
+<link rel="alternate" hreflang="x-default" href="https://kqso.eu/en/news.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="kQSO">
+<meta property="og:title" content="Novinky · kQSO">
+<meta property="og:description" content="Co je nového v jednotlivých verzích kQSO. Web, Android i iOS mají stejnou verzi.">
+<meta property="og:url" content="https://kqso.eu/cs/novinky.html">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:image" content="https://kqso.eu/media/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131313" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/site.css">
+<script src="/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Přeskočit na obsah</a>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="/cs/"><img src="/favicon.svg" alt="" width="28" height="28"><span>kQSO</span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" class="nav">
+<a href="/cs/aktivace.html">Aktivace</a>
+<a href="/cs/zavody.html">VKV závody</a>
+<a href="/cs/satelity.html">Satelity</a>
+<a href="/cs/radia.html">Rádia a CW</a>
+<a href="/cs/novinky.html" aria-current="page">Novinky</a>
+<a href="/cs/faq.html">Otázky</a>
+      <div class="nav-langs"><span class="langs" role="group" aria-label="Jazyk"><span aria-current="true" lang="cs">CS</span><a href="/en/news.html" hreflang="en" lang="en" title="English">EN</a></span></div>
+    </nav>
+    <a class="btn btn-ink top-open" href="https://kqso.ok1cdj.com/">Otevřít kQSO</a>
+    <span class="langs" role="group" aria-label="Jazyk"><span aria-current="true" lang="cs">CS</span><a href="/en/news.html" hreflang="en" lang="en" title="English">EN</a></span>
+  </div>
+</header>
+<main id="main">
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">Aktuální verze <span class="mono">1.19</span></p>
+    <h1>Novinky</h1>
+    <p class="lead">Web, aplikace pro Android i iOS mají stejné číslo verze. Webová verze se aktualizuje sama, aplikace přes obchod. Úplný seznam změn je v <a href="https://github.com/ok1cdj/kQSO/blob/main/CHANGELOG.md">CHANGELOG</a> (anglicky).</p>
+  </div>
+</section>
+<section class="wrap text">
+<section class="release" id="v1.19">
+<h2><span class="mono">1.19</span></h2>
+<ul>
+<li>ON4KST chat: stanice pod závodním panelem jsou všechny podle filtrů a řazení chatu a seznamem jde posouvat. Stanice jdou řadit i podle lokátoru (LOC).</li>
+<li>Chat drží delší historii: zprávy pro tebe, zmínky o tvé značce a tvoje zprávy po celou relaci (Jen pro mě, detail stanice), ostatní přes půl hodiny rušného závodu.</li>
+<li>Nový web kqso.eu: co kQSO umí, v češtině i angličtině.</li>
+</ul>
+</section>
+<section class="release" id="v1.18">
+<h2><span class="mono">1.18</span></h2>
+<ul>
+<li>VKV závod spojení nikdy nemaže: D a Zneplatnit v úpravě QSO ho přeškrtnou jako ERROR. Zůstane v logu se svým číslem a 0 body a v EDI je jako ERROR, aby odeslaná čísla šla po sobě. Duplicitu kQSO zaloguje až po potvrzení a předchozí QSO na pásmu se pak stane ERROR.</li>
+<li>Opakování výzvy: A3 ⏎ a pak F5 volá CQ dokola 3 s po konci výzvy, dokud nedáš Esc nebo jiné makro (v hlavičce RUN ↻3). A0 ⏎ vypne.</li>
+<li>F5–F12 fungují i v chatu, na mapě a v seznamu QSO, Esc tam zastaví vysílání. Makra jsou seřazená podle F kláves a s HW klávesnicí mají F klávesu v rohu.</li>
+<li>Report a číslo jdou v CW zkráceně: 5NN, 55N, T18. V logu i v EDI zůstanou číslice.</li>
+<li>Seznam QSO má hledání podle značky, čísla nebo lokátoru (OK1, JN6, 018). Rate v závodním panelu je živý: QSO za hodinu z posledních 10 spojení.</li>
+</ul>
+</section>
+<section class="release" id="v1.17">
+<h2><span class="mono">1.17</span></h2>
+<ul>
+<li>CW dekodér i v aplikacích pro Android a iOS: poslouchá mikrofonem u reproduktoru rádia nebo zvukovým vstupem přes USB. Zvuk se dekóduje jen v telefonu. Nastavení → CW dekodér.</li>
+<li>ON4KST chat: stanice jen do zvolené vzdálenosti (výchozí 900 km), zprávu stanici napíšeš přímo v jejím detailu a lokátor, který si stanice nastavila v chatu, se nabídne v logu.</li>
+<li>Scatter a aurora reporty: 59S, 59A (v CW 599A); ve VKV závodě i s číslem, 59S012.</li>
+<li>Hlavička logu na úzkém telefonu se zalomí do dvou řádků, azimut a čas 6H se už neuříznou.</li>
+</ul>
+</section>
+<section class="release" id="v1.16">
+<h2><span class="mono">1.16</span></h2>
+<ul>
+<li>CW dekodér na webu (Chrome / Edge na počítači; v aplikacích zatím není): neuronová síť DeepCW dekóduje CW ze zvuku rádia (USB zvuková karta) nebo z jiné záložky s WebSDR / KiwiSDR. Text běží v logu při CW, klepnutím na značku, report nebo lokátor ho vložíš do řádku; ladička ukáže, kde signál je. Nastavení → CW dekodér, Alt+U; podrobně v návodu.</li>
+</ul>
+</section>
+<section class="release" id="v1.15">
+<h2><span class="mono">1.15</span></h2>
+<ul>
+<li>Rádio Icom na počítači kabelem: Chrome / Edge, vlastní USB rádia (IC-7300, 9700, 705 …) nebo CT-17 / kabel USB–CI-V. Rychlost linky a adresu kQSO najde samo. Nastavení → Rádio → USB / sériová linka; podrobně v návodu.</li>
+<li>Pásmo z klávesnice: Alt+N další, Alt+P předchozí.</li>
+</ul>
+</section>
+<section class="release" id="v1.14">
+<h2><span class="mono">1.14</span></h2>
+<ul>
+<li>ON4KST chat přímo v logu VKV závodu: zprávy, stanice se vzdáleností, azimutem a pásmy, na kterých jsou QRV, žádost o sked jedním klepnutím a psaní ze vstupního řádku (@ZNAČKA text). Na tabletu na šířku aktivní stanice pod závodním panelem. Nastavení → ON4KST chat; bez účtu si ho vyzkoušíš se značkou DEMO.</li>
+<li>BOTA — bunkry (Bunkers on the Air): reference B/OK/0123 a nejbližší bunkry v Novém logu. V Nastavení → Reference offline si vybereš, které programy se v okolí nabízejí.</li>
+<li>Návod s obrázky (Nastavení → O aplikaci → Návod) a První kroky: VKV závod a SOTA aktivace krok za krokem.</li>
+</ul>
+</section>
+<section class="release" id="v1.13.1">
+<h2><span class="mono">1.13.1</span></h2>
+<ul>
+<li>Esc smaže rozepsaný řádek — třeba značku, kterou si jen ověřuješ v logu. Co už prošlo Enterem, zůstane.</li>
+</ul>
+</section>
+<section class="release" id="v1.13">
+<h2><span class="mono">1.13</span></h2>
+<ul>
+<li>VKV závod na šířku bez naší klávesnice: vpravo nahoře velké další číslo spojení, čas UTC, počet QSO na pásmu, rychlost, body a ODX.</li>
+<li>Nová VKV databáze značek z veřejných deníků závodů ČRK (3 055 značek) včetně pásem, na kterých jsou stanice QRV.</li>
+<li>Za značkou se ukážou ostatní pásma, kde je stanice QRV (2 70 23 … 24G 47G); pásma, kde už ji v logu máš, jsou přeškrtnutá.</li>
+<li>Stanici, kterou už v logu máš, se na dalším pásmu rovnou vyplní lokátor.</li>
+<li>Zkratky pro HW klávesnici: Ctrl+Enter zapíše QSO, Alt+W/D/H/E, Alt+X lokátor, Alt+M mód, Alt+L/Q, makra F5–F8 F11 F12, PgUp/PgDn rychlost (vše v nápovědě).</li>
+<li>E ⏎ upraví poslední QSO; ESM se teď přepíná příkazem ESM ⏎ nebo Ctrl+M.</li>
+</ul>
+</section>
+<section class="release" id="v1.12">
+<h2><span class="mono">1.12</span></h2>
+<ul>
+<li>Nastavení → Klávesnice pro logování: kQSO, systémová, nebo žádná. Systémová = klávesnice telefonu (otevře se dotykem na řádek vstupu), vstup zůstane nahoře a pod ním poslední QSO. Žádná = jen HW klávesnice, místo naší klávesnice poslední QSO.</li>
+</ul>
+</section>
+<section class="release" id="v1.11">
+<h2><span class="mono">1.11</span></h2>
+<ul>
+<li>VKV závody: v Novém logu jen závod (IARU R1, VKV PA, FM pohár) a účast na 6 hodin. SO / MO / CHECK se volí v EDI exportu, LP na 145 / 435 MHz podle výkonu (≤ 100 W). Soubory pojmenované podle ČRK (01OK1XXX.edi).</li>
+<li>Kategorie 6 hodin: hlavička ukazuje zbývající čas, upozorní na začátek 2. části a konec.</li>
+<li>VKV PA a FM pohár: bodování podle pásů velkých čtverců. FM pohár přepne na FM a v EDI ukáže souhrn pro webový formulář.</li>
+<li>Statistiky závodu po hodinách a po velkých čtvercích (stanice, vzdálenost, azimut).</li>
+<li>Filtr pásem v seznamu QSO a v mapě; ve VKV závodě poslední QSO jen z aktuálního pásma.</li>
+<li>Nastavení: technické části (databáze, reference offline, CI-V, klíčovač) složené do řádků se stavem.</li>
+</ul>
+</section>
+<section class="release" id="v1.10.1">
+<h2><span class="mono">1.10.1</span></h2>
+<ul>
+<li>Tlačítko Zpět (i gesto, na Kompaktu klávesa) vrací v aplikaci o obrazovku zpět, stejně jako „‹“. Aplikaci zavře až na seznamu logů. Na iPhonu a iPadu funguje tah od levého okraje.</li>
+</ul>
+</section>
+<section class="release" id="v1.10">
+<h2><span class="mono">1.10</span></h2>
+<ul>
+<li>Můj lokátor z polohy: tlačítko se zaměřovačem v Novém logu. Poloha se nikam neukládá ani neposílá.</li>
+<li>Nejbližší reference: v logu Aktivace ukáže zaměřovač nejbližší vrcholy SOTA a GMA, parky POTA a WWFF a rozhledny TOTA, klepnutím je přidáš. Funguje i bez signálu: okolí se stáhne samo, další oblasti v Nastavení → Reference offline.</li>
+<li>Víc referencí v jedné aktivaci (vrchol + parky + WWFF …), oddělených mezerou. Export nabídne celý log i soubor pro každý program, pojmenovaný podle jeho pravidel.</li>
+</ul>
+</section>
+<section class="release" id="v1.9">
+<h2><span class="mono">1.9</span></h2>
+<ul>
+<li>Jakýkoli Icom přes klíčovač M5-ESP32-keyer (beta, firmware 2.1.0+): Nastavení → Rádio → Přes klíčovač. Pásmo, mód a kmitočet z rádia, napsané pásmo / mód nebo F… ho přeladí. Model se pozná podle CI-V adresy (IC-706, IC-910, IC-9700, IC-7300 …); pásmo, které rádio neumí, přepne jen deník.</li>
+<li>Jak si klíčovač postavit (součástky, schémata, firmware): odkaz v Nastavení → Klíčovač M5.</li>
+<li>VKV závod: lokátor napsaný před značkou je lokátor — hned QRB, azimut a značky známé u lokátoru.</li>
+</ul>
+</section>
+<section class="release" id="v1.8.2">
+<h2><span class="mono">1.8.2</span></h2>
+<ul>
+<li>kQSO je i pro iPhone a iPad: stejné logování, soubory ADIF v aplikaci Soubory, klíčovač a IC-705 přes Bluetooth.</li>
+</ul>
+</section>
+<section class="release" id="v1.8">
+<h2><span class="mono">1.8</span></h2>
+<ul>
+<li>Icom IC-705 přes Bluetooth (beta, aplikace pro Android): Nastavení → IC-705. Pásmo, mód a přesný kmitočet (FREQ) bere kQSO z rádia, napsané pásmo / mód nebo F28300 rádio přeladí. V CW jdou makra přes klíčovač rádia, v SSB / FM tlačítka T1–T4 odvysílají hlasové paměti. Transvertory a pásma, která rádio neumí, viz nápověda (H).</li>
+<li>Nový log vyžaduje vlastní značku.</li>
+</ul>
+</section>
+<section class="release" id="v1.7">
+<h2><span class="mono">1.7</span></h2>
+<ul>
+<li>CW klíčovač přes Bluetooth (beta): Nastavení → CW klíčování připojí M5-ESP32-keyer, v CW pak lišta nabízí makra (CQ, EX, TU …), RUN / S&amp;P a ESM jako v N1MM. Podrobnosti v nápovědě (H). Chyby prosím hlaste na GitHub Issues.</li>
+<li>Vzhled: Nastavení → Zobrazení → Systém / Světlý / Tmavý (i v aplikaci pro Android).</li>
+<li>Satelitní QSO ukládají kmitočty uplinku a downlinku (střed transpondéru), takže je Wavelog převezme. Starším QSO se doplní při exportu nebo pushi.</li>
+<li>Aplikace pro Android upozorní na seznamu logů, když vyjde nová verze (lze vypnout v Nastavení).</li>
+<li>Oprava: srážkový radar na VKV mapě se v aplikaci zapínal sám.</li>
+</ul>
+</section>
+</section>
+
+</main>
+<footer class="foot">
+  <div class="foot-in">
+    <p><img src="/favicon.svg" alt="" width="20" height="20"> kQSO napsal OK1CDJ · svobodný software pod licencí GPL-3.0</p>
+    <p class="foot-links">
+      <a href="https://kqso.ok1cdj.com/">kqso.ok1cdj.com</a>
+      <a href="https://kqso.ok1cdj.com/manual/cs.html">Návod</a>
+      <a href="/cs/novinky.html">Aktuální verze <span class="mono">1.19</span></a>
+      <a href="https://github.com/ok1cdj/kQSO">GitHub</a>
+      <a href="https://kqso.ok1cdj.com/privacy.html">Ochrana soukromí</a>
+    </p>
+  </div>
+</footer>
+</body>
+</html>

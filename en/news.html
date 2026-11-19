@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>News · kQSO</title>
+<meta name="description" content="What's new in each kQSO version. The web, Android and iOS share one version.">
+<link rel="canonical" href="https://kqso.eu/en/news.html">
+<link rel="alternate" hreflang="cs" href="https://kqso.eu/cs/novinky.html">
+<link rel="alternate" hreflang="en" href="https://kqso.eu/en/news.html">
+<link rel="alternate" hreflang="x-default" href="https://kqso.eu/en/news.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="kQSO">
+<meta property="og:title" content="News · kQSO">
+<meta property="og:description" content="What's new in each kQSO version. The web, Android and iOS share one version.">
+<meta property="og:url" content="https://kqso.eu/en/news.html">
+<meta property="og:locale" content="en_GB">
+<meta property="og:image" content="https://kqso.eu/media/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131313" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/site.css">
+<script src="/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="/en/"><img src="/favicon.svg" alt="" width="28" height="28"><span>kQSO</span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" class="nav">
+<a href="/en/activations.html">Activations</a>
+<a href="/en/contests.html">VHF contests</a>
+<a href="/en/satellites.html">Satellites</a>
+<a href="/en/radios.html">Radios and CW</a>
+<a href="/en/news.html" aria-current="page">News</a>
+<a href="/en/faq.html">FAQ</a>
+      <div class="nav-langs"><span class="langs" role="group" aria-label="Language"><a href="/cs/novinky.html" hreflang="cs" lang="cs" title="Česky">CS</a><span aria-current="true" lang="en">EN</span></span></div>
+    </nav>
+    <a class="btn btn-ink top-open" href="https://kqso.ok1cdj.com/">Open kQSO</a>
+    <span class="langs" role="group" aria-label="Language"><a href="/cs/novinky.html" hreflang="cs" lang="cs" title="Česky">CS</a><span aria-current="true" lang="en">EN</span></span>
+  </div>
+</header>
+<main id="main">
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">Current version <span class="mono">1.19</span></p>
+    <h1>News</h1>
+    <p class="lead">The web, the Android app and the iOS app share one version number. The web version updates itself, the apps through their stores. The full list of changes is in the <a href="https://github.com/ok1cdj/kQSO/blob/main/CHANGELOG.md">CHANGELOG</a>.</p>
+  </div>
+</section>
+<section class="wrap text">
+<section class="release" id="v1.19">
+<h2><span class="mono">1.19</span></h2>
+<ul>
+<li>ON4KST chat: the stations under the contest panel are all of them in the chat's filters and order, in a list that scrolls. Stations also sort by locator (LOC).</li>
+<li>The chat keeps a longer history: messages to you, mentioning your call and your own for the whole session (Only to me, a station's details), the others over half an hour of a busy contest.</li>
+<li>A new website, kqso.eu: what kQSO does, in English and Czech.</li>
+</ul>
+</section>
+<section class="release" id="v1.18">
+<h2><span class="mono">1.18</span></h2>
+<ul>
+<li>A VHF contest never deletes a QSO: D and Strike out in the QSO edit cross it out as ERROR. It stays in the log with its serial and 0 points and is an ERROR row in the EDI, so the sent serials stay in sequence. A dupe is logged only when you confirm it, and the earlier QSO on the band then becomes ERROR.</li>
+<li>CQ repeat: A3 ⏎, then F5 calls CQ round, 3 s after each one ends, until Esc or another macro (RUN ↻3 in the header). A0 ⏎ turns it off.</li>
+<li>F5–F12 also work in the chat, map and QSO list, and Esc stops sending there. The macros are in F-key order and with a hardware keyboard show their F key in the corner.</li>
+<li>The report and serial go out as cut numbers in CW: 5NN, 55N, T18. The log and the EDI keep the digits.</li>
+<li>The QSO list has a search by call, serial or locator (OK1, JN6, 018). The contest panel's rate is live: QSOs per hour from the last 10.</li>
+</ul>
+</section>
+<section class="release" id="v1.17">
+<h2><span class="mono">1.17</span></h2>
+<ul>
+<li>The CW decoder in the Android and iOS apps too: it listens through the microphone next to the radio's speaker or a USB audio input. The audio is decoded on the phone only. Settings → CW decoder.</li>
+<li>ON4KST chat: stations only up to a distance you set (900 km by default), a message to a station right in its details, and the locator a station has set in the chat is offered in the log.</li>
+<li>Scatter and aurora reports: 59S, 59A (599A in CW); in a VHF contest with the serial too, 59S012.</li>
+<li>The log header on a narrow phone wraps to two rows; the azimuth and the 6H time are no longer cut off.</li>
+</ul>
+</section>
+<section class="release" id="v1.16">
+<h2><span class="mono">1.16</span></h2>
+<ul>
+<li>CW decoder on the web (Chrome / Edge on a computer; not in the apps yet): the DeepCW neural network decodes CW from the radio's audio (its USB sound card) or from another tab with a WebSDR / KiwiSDR. The text runs in a log in CW, a tap on a call, report or locator puts it into the line; the tuning indicator shows where the signal is. Settings → CW decoder, Alt+U; details in the manual.</li>
+</ul>
+</section>
+<section class="release" id="v1.15">
+<h2><span class="mono">1.15</span></h2>
+<ul>
+<li>An Icom radio on a computer by cable: Chrome / Edge, the radio's own USB (IC-7300, 9700, 705 …) or a CT-17 / USB–CI-V cable. kQSO finds the bus rate and the address itself. Settings → Radio → USB / serial; details in the manual.</li>
+<li>Band from the keyboard: Alt+N next, Alt+P previous.</li>
+</ul>
+</section>
+<section class="release" id="v1.14">
+<h2><span class="mono">1.14</span></h2>
+<ul>
+<li>ON4KST chat right in a VHF contest log: messages, stations with distance, bearing and the bands they are QRV on, a sked request in one tap and writing from the input line (@CALL text). On a tablet in landscape the active stations under the contest panel. Settings → ON4KST chat; without an account try it with the call DEMO.</li>
+<li>BOTA — bunkers (Bunkers on the Air): references B/OK/0123 and the nearest bunkers in New log. Settings → Offline references lets you choose which programs are offered nearby.</li>
+<li>A manual with pictures (Settings → About → Manual) and First steps: a VHF contest and a SOTA activation step by step.</li>
+</ul>
+</section>
+<section class="release" id="v1.13.1">
+<h2><span class="mono">1.13.1</span></h2>
+<ul>
+<li>Esc clears the line being typed — e.g. a call you only looked up in the log. What Enter took in stays.</li>
+</ul>
+</section>
+<section class="release" id="v1.13">
+<h2><span class="mono">1.13</span></h2>
+<ul>
+<li>VHF contest in landscape without our keyboard: the next serial in big digits at the top right, UTC clock, the band's QSO count, rate, points and ODX.</li>
+<li>New VHF callsign database from the public ČRK contest logs (3,055 calls) with the bands each station is QRV on.</li>
+<li>After the call, the other bands the station is QRV on show up (2 70 23 … 24G 47G); bands already worked in this log are struck out.</li>
+<li>A station already in this log gets its locator filled in straight away on the next band.</li>
+<li>Hardware keyboard shortcuts: Ctrl+Enter saves the QSO, Alt+W/D/H/E, Alt+X locator, Alt+M mode, Alt+L/Q, macros F5–F8 F11 F12, PgUp/PgDn speed (all in the help).</li>
+<li>E ⏎ edits the last QSO; ESM is now switched with ESM ⏎ or Ctrl+M.</li>
+</ul>
+</section>
+<section class="release" id="v1.12">
+<h2><span class="mono">1.12</span></h2>
+<ul>
+<li>Settings → Keyboard for logging: kQSO, system, or none. System = the phone's keyboard (tap the input line to open it), the input stays at the top with the recent QSOs below. None = a hardware keyboard only, the recent QSOs take our keyboard's place.</li>
+</ul>
+</section>
+<section class="release" id="v1.11">
+<h2><span class="mono">1.11</span></h2>
+<ul>
+<li>VHF contests: New log asks only the contest (IARU R1, VKV PA, FM pohár) and a 6-hour entry. SO / MO / CHECK is chosen at the EDI export, LP on 145 / 435 MHz follows the power (≤ 100 W). Files named as ČRK asks (01OK1XXX.edi).</li>
+<li>6-hour entry: the header shows the time left and tells when part 2 starts and when the 6 hours are up.</li>
+<li>VKV PA and FM pohár: large-square ring scoring. FM pohár switches to FM and its EDI screen shows the summary for the web form.</li>
+<li>Contest statistics per hour and per large square (stations, distance, azimuth).</li>
+<li>Band filter in the QSO list and the map; in a VHF contest the recent QSOs show the current band only.</li>
+<li>Settings: the technical sections (database, offline references, CI-V, keyer) fold into rows with their state.</li>
+</ul>
+</section>
+<section class="release" id="v1.10.1">
+<h2><span class="mono">1.10.1</span></h2>
+<ul>
+<li>The Back button (and gesture, the Kompakt's key) goes back one screen in the app, like &quot;‹&quot;. Only on the log list does it close the app. On iPhone and iPad, swipe from the left edge.</li>
+</ul>
+</section>
+<section class="release" id="v1.10">
+<h2><span class="mono">1.10</span></h2>
+<ul>
+<li>My locator from the position: the crosshair button in New Log. The position is never stored or sent.</li>
+<li>Nearest references: in an Activation log the crosshair lists the nearest SOTA and GMA summits, POTA and WWFF parks and TOTA towers; a tap adds one. Works without signal: the area around you downloads by itself, more in Settings → Offline references.</li>
+<li>Several references in one activation (summit + parks + WWFF …), separated by spaces. Export offers the whole log and a file for each program, named as it asks.</li>
+</ul>
+</section>
+<section class="release" id="v1.9">
+<h2><span class="mono">1.9</span></h2>
+<ul>
+<li>Any Icom through the M5-ESP32-keyer (beta, firmware 2.1.0+): Settings → Radio → Via the keyer. Band, mode and frequency from the radio; a typed band / mode or F… tunes it. The model goes by its CI-V address (IC-706, IC-910, IC-9700, IC-7300 …); a band the radio doesn't work switches only the log.</li>
+<li>How to build the keyer (parts, schematics, firmware): a link in Settings → M5 keyer.</li>
+<li>VHF contest: a locator typed before the call is a locator — QRB, azimuth and the calls known there at once.</li>
+</ul>
+</section>
+<section class="release" id="v1.8.2">
+<h2><span class="mono">1.8.2</span></h2>
+<ul>
+<li>kQSO for iPhone and iPad: the same logging, ADIF files in the Files app, the CW keyer and the IC-705 over Bluetooth.</li>
+</ul>
+</section>
+<section class="release" id="v1.8">
+<h2><span class="mono">1.8</span></h2>
+<ul>
+<li>Icom IC-705 over Bluetooth (beta, Android app): Settings → IC-705. Band, mode and the exact frequency (FREQ) come from the radio; a typed band / mode or F28300 tunes it. In CW the macros go through the radio's keyer, in SSB / FM the T1–T4 buttons send its voice memories. Transverters and bands the radio doesn't work: see the help (H).</li>
+<li>A new log needs your own callsign.</li>
+</ul>
+</section>
+<section class="release" id="v1.7">
+<h2><span class="mono">1.7</span></h2>
+<ul>
+<li>CW keyer over Bluetooth (beta): Settings → CW keying connects the M5-ESP32-keyer; in CW the strip then offers macros (CQ, EX, TU …), RUN / S&amp;P and N1MM-style ESM. Details in the help (H). Please report bugs on GitHub Issues.</li>
+<li>Theme: Settings → Display → System / Light / Dark (in the Android app too).</li>
+<li>Satellite QSOs store the uplink and downlink frequencies (transponder centre), so Wavelog picks them up. Older QSOs get them on export or push.</li>
+<li>The Android app tells you on the log list when a new version is out (can be turned off in Settings).</li>
+<li>Fix: the rain radar on the VHF map switched itself on in the app.</li>
+</ul>
+</section>
+</section>
+
+</main>
+<footer class="foot">
+  <div class="foot-in">
+    <p><img src="/favicon.svg" alt="" width="20" height="20"> kQSO by OK1CDJ · free software under GPL-3.0</p>
+    <p class="foot-links">
+      <a href="https://kqso.ok1cdj.com/">kqso.ok1cdj.com</a>
+      <a href="https://kqso.ok1cdj.com/manual/en.html">Manual</a>
+      <a href="/en/news.html">Current version <span class="mono">1.19</span></a>
+      <a href="https://github.com/ok1cdj/kQSO">GitHub</a>
+      <a href="https://kqso.ok1cdj.com/privacy.html">Privacy</a>
+    </p>
+  </div>
+</footer>
+</body>
+</html>
